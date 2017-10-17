@@ -1,0 +1,26 @@
+ <table border="1">
+   <caption>Some data</caption>
+   <tr>
+    <th>№</th>
+    <th>T-R Separation</th>
+    <th>Carrier Frequency</th>
+    <th>T-X Antenna Height</th>
+    <th>R-X Antenna Height</th>
+    <th>Show</th>
+    <th>Remove</th>
+   </tr>
+   <%i=0%>
+	<% @lab1s.each do |elt|%>
+    <tr>
+    <td><%=i+=1%></td>
+    <td><%=elt.TRSeparation%></td>
+    <td><%=elt.CarrierFrequency%></td>
+    <td><%=elt.TXAntennaHeight%></td>
+    <td><%=elt.RXAntennaHeight%></td>
+    <td><%=link_to "Show",laba1_path(elt),class: "btn" %></td>
+    <td><%=link_to "Destroy",laba1_path(elt),method: :delete,class: "btn btn-delete" %></td>
+    </tr>
+  <%end%>
+  </table>
+  <%= link_to "Create new data", new_laba1_path,class: "btn"%>
+  

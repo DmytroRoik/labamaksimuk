@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  TRSeparation: 1
+  CarrierFrequency: 1
+  TXAntennaHeight: 1.5
+  RXAntennaHeight: 1.5
+  user: one
+
+two:
+  TRSeparation: 1
+  CarrierFrequency: 1
+  TXAntennaHeight: 1.5
+  RXAntennaHeight: 1.5
+  user: two

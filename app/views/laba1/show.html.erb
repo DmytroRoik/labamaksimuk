@@ -1,0 +1,34 @@
+<div class="container graphics">
+<%=link_to "Back",laba1_index_path, class: "btn"%>
+	<h2>Data:</h2>
+	<h3>T-R Separation:<span> <%=@l.TRSeparation%> Km</span></h3><br>
+	<h3>Carrier Frequency:<span> <%=@l.CarrierFrequency%> MHz</span></h3><br>
+	<h3>TX Antenna Height:<span> <%=@l.TXAntennaHeight%> Meters</span></h3><br>
+	<h3>RX Antenna Height:<span> <%= @l.RXAntennaHeight%> Meters</span></h3><br>
+</div>
+<div class="container">
+<div class="graphics">
+<h2>Free Space</h2>
+	<%=line_chart @dataFreeSpace,xtitle:"asd",ytitle:"1488",points:false%>
+</div>
+
+<div class="graphics">
+<h2>Hata's Chart</h2>
+	<%=line_chart @dataHata,points:false%>
+</div>
+
+<div class="graphics">
+<h2>Okumura's Chart</h2>
+	<%=line_chart @dataOkumura,points:false%>		
+</div>
+
+<div class="graphics">
+<h2>Urban's charts</h2>
+  <%= line_chart [
+  {name: "Lee_Philadenphia", data: @Lee_Philadenphia.invert},
+  {name: "Lee_Newark", data: @Lee_Newark.invert},
+  {name: "Lee_Tokyo", data: @Lee_Tokyo.invert}
+],points:false %>
+	
+</div>
+</div>

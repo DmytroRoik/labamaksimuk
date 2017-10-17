@@ -1,0 +1,8 @@
+<%= form_for @l,:url => url_for(:controller => 'laba1', :action => 'create') do |f| %>
+  T  -  R  Separation: <%= f.text_field :TRSeparation %>Km<br />
+  Carrier Frequency: <%= f.text_field :CarrierFrequency %>MHz<br />
+  TX Antenna Height: <%= f.text_field :TXAntennaHeight %>Meters<br />
+  RX Antenna Height: <%= f.text_field :RXAntennaHeight %>Meters<br />
+  <%= f.submit "Save", class: "btn"%>
+  <%=link_to "Back",laba1_index_path, class: "btn"%>
+<% end %>

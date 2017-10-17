@@ -1,0 +1,181 @@
+<!-- only for google maps -->
+    
+<div class="container">
+     <img src="/img/logo_final.png" alt="Alternate Text" class="logo"/>
+
+    <div class="gener_form_horizontal">
+        <ul >
+            <li class="run_graphs">
+                <div>
+                    <h5>Run</h5>
+                    <input type="button" value=" Transmitter Placement" onclick="place_station_agreement()">
+                    <input type="button" value="Predict Coverage" onclick="show_stations_cover()">
+                </div>
+            </li>
+            <li class="run_graphs">
+                <div>
+                    <h5>Graphs</h5>
+                    <input type="button" value="Free Space">
+                    <input type="button" value="Hata">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h5>Spectrum Analyzer</h5>
+                    <label for="SamplingFrequency">Sampling Frequency</label><br>
+                    <input type="text" name="" id="SamplingFrequency" value="0">
+                    <input type="submit" name="" value="Hata">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h5>Antenna Design</h5>
+                   <ul>
+                        <li>
+                            <label for="ElementNumber">Element Number</label><br>
+                            <input type="text" id="ElementNumber" value="0">
+                        </li>
+                        <li>
+                            <label for="ElementSpacing">Element Spacing</label><br>
+                            <input type="text" name="" id="ElementSpacing" value="0"><br />
+                        </li>
+                        <li>
+                            <input type="submit" value="OK">
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+   
+    <div class="container">
+    <div class="gener_form_vertical_left" id="menu">
+        <h3>Menu</h3>
+        <ul>
+            <li>
+                <input type="button" value="Upload Map" />
+            </li>
+            <li>
+                <input type="button" value="Clear Map" onclick="clear_map()" />
+            </li>
+            <li>
+                <input type="button" value="Exit"  />
+            </li>
+        </ul>
+    </div>
+    <div id="map">
+    </div>
+        <div class="gener_form_vertical_left" id="SystemParameters">
+        <h3>System Parameters</h3>
+        <ul >
+            <li>
+                <div>
+                    <label for="Frequency">Frequency [Mhz]</label><br>
+                    <input type="text" id="Frequency" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="TransmitingPower">Transmiting Power [dBm]</label><br>
+                    <input type="text" id="TransmitingPower" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="TransmittingGain">Transmitting Gain [dBi]</label><br>
+                    <input type="text" id="TransmittingGain" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="ReveiverGain">Reveiver Gain [dBi]</label><br>
+                    <input type="text" id="ReveiverGain" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="SystemLoss">System Loss [dB]</label><br>
+                    <input type="text" id="SystemLoss" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="TransmittierHeight">Transmittier Height [m]</label><br>
+                    <input type="text" id="TransmittierHeight" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="ReceiverHeight">Receiver Height [m]</label><br>
+                    <input type="text" id="ReceiverHeight" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="Distance">Distance [km]</label><br>
+                    <input type="text" id="Distance" value="0" onchange="SystemParameters_init()">
+                </div>
+            </li>
+            <li id="PropagationModel">
+                <div>
+                    <h3>Propagation Model</h3><br />
+                    <select>
+                        <option value="1000">Urban – big city</option>
+                        <option value="2000">Urban – medium/small city</option>
+                        <option value="3000">Suburban</option>
+                        <option value="4000">Rural</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+     <div id="PropagationModels">
+        <h2>Propagation Models</h2>
+        <ul>
+            <li>
+                <div id="FreeSpace" class="PropModels">
+                    <h3>Free Space</h3>
+                    <ul>
+                        <li>
+                            <label for="PathLoss">Path Loss[dB]</label><br />
+                            <input type="text" id="PathLoss"  />
+                        </li>
+                        <li>
+                            <label for="ReceiverPower">Receiver Power[dBm]</label><br />
+                            <input type="text" id="ReceiverPower" />
+                        </li> 
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div id="Okumura_Hata" class="PropModels">
+                    <h3>Okumura-Hata [dB]</h3>
+                    <ul>
+                        <li>
+                            <label for="UrbanBigCity">Urban Big-city</label><br />
+                            <input type="text" id="UrbanBigCity" />
+                        </li>
+                        <li>
+                            <label for="UrbanMediumSmall">Urban Medium-small</label><br />
+                            <input type="text" id="UrbanMediumSmall" />
+                        </li>
+                        <li>
+                             <label for="Suburban">Suburban</label><br />
+                             <input type="text" id="Suburban" />
+                        </li>
+                        <li>
+                            <label for="Rural">Rural</label><br />
+                             <input type="text" id="Rural" />
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTPpQ08GB1OGiE1iMkY_e7wqBAHeVEock&libraries=visualization&callback=initMap">
+    </script>
+</div>
+    
